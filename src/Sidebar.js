@@ -1,7 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTachometerAlt, faUserGraduate, faUsers, faBuilding, faChartBar } from '@fortawesome/free-solid-svg-icons'; // Import icons
+import {
+  faTachometerAlt,
+  faUserGraduate,
+  faUsers,
+  faBuilding,
+  faChartBar,
+} from '@fortawesome/free-solid-svg-icons';
 
 const Sidebar = () => {
   return (
@@ -13,22 +19,22 @@ const Sidebar = () => {
             <FontAwesomeIcon icon={faTachometerAlt} className="mr-3" /> Dashboard
           </Link>
         </li>
-        <li>
+        <li className="border-t border-gray-700 mt-2 pt-2">
           <Link to="/interns" className="flex items-center py-2 px-4 hover:bg-gray-700">
             <FontAwesomeIcon icon={faUserGraduate} className="mr-3" /> Interns
           </Link>
         </li>
-        <li>
+        <li className="border-t border-gray-700 mt-2 pt-2">
           <Link to="/non_interns" className="flex items-center py-2 px-4 hover:bg-gray-700">
             <FontAwesomeIcon icon={faUsers} className="mr-3" /> Non Interns
           </Link>
         </li>
-        <li>
+        <li className="border-t border-gray-700 mt-2 pt-2">
           <Link to="/companies" className="flex items-center py-2 px-4 hover:bg-gray-700">
             <FontAwesomeIcon icon={faBuilding} className="mr-3" /> Companies
           </Link>
         </li>
-        <li>
+        <li className="border-t border-gray-700 mt-2 pt-2">
           <Link to="/reports" className="flex items-center py-2 px-4 hover:bg-gray-700">
             <FontAwesomeIcon icon={faChartBar} className="mr-3" /> Reports
           </Link>
