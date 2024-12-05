@@ -1,13 +1,16 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faBell,
-  faUser,
-  faSignOutAlt,
-  faSearch,
-} from "@fortawesome/free-solid-svg-icons";
+import { faBell, faUser, faSignOutAlt, faSearch } from "@fortawesome/free-solid-svg-icons";
+import { useNavigate } from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = ({ handleLogout }) => {
+  const navigate = useNavigate();
+
+  const handleLogoutClick = () => {
+    handleLogout();
+    navigate("/login"); // Redirect to login page
+  };
+
   return (
     <div className="text-white flex items-center justify-between p-3 border-b border-gray-200">
       <div className="text-slate-500 text-sm">
@@ -20,7 +23,10 @@ const Navbar = () => {
         <button className="bg-gray-700 px-3 py-2 rounded flex items-center">
           <FontAwesomeIcon icon={faUser} />
         </button>
-        <button className="bg-red-500 px-3 py-2 rounded flex items-center">
+        <button
+          onClick={handleLogoutClick}
+          className="bg-red-500 px-3 py-2 rounded flex items-center"
+        >
           <FontAwesomeIcon icon={faSignOutAlt} />
         </button>
       </div>
