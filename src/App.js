@@ -2,6 +2,11 @@ import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Sidebar from './Sidebar';
 import Navbar from './Navbar';
+import DashboardPage from './components/DashboardPage';
+import CompaniesPage from './components/CompaniesPage';
+import ReportsPage from './components/ReportsPage';
+import InternsPage from './components/InternsPage';
+import NonInternsPage from './components/NonInternsPage';
 
 const App = () => {
   return (
@@ -10,13 +15,14 @@ const App = () => {
         <Sidebar />
         <div className="flex-1 flex flex-col">
           <Navbar />
-          <main className="p-4">
+          <main className="flex-1 overflow-y-auto">
             <Routes>
-              <Route path="/" element={<h1 className="text-xl font-bold">Dashboard</h1>} />
-              <Route path="/students" element={<h1 className="text-xl font-bold">Students Page</h1>} />
-              <Route path="/internships" element={<h1 className="text-xl font-bold">Internships Page</h1>} />
-              <Route path="/companies" element={<h1 className="text-xl font-bold">Companies Page</h1>} />
-              <Route path="/reports" element={<h1 className="text-xl font-bold">Reports Page</h1>} />
+              <Route path="/" element={<DashboardPage />} />
+              <Route path="/dashboard" element={<DashboardPage />} />
+              <Route path="/interns" element={<InternsPage />} />
+              <Route path="/non_interns" element={<NonInternsPage/>} />
+              <Route path="/companies" element={<CompaniesPage />} />
+              <Route path="/reports" element={<ReportsPage />} />
             </Routes>
           </main>
         </div>
